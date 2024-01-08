@@ -9,18 +9,44 @@
   /* Safari, Android, iOS */
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
   font-family: "Vazir" !important;
 }
 
 /* Sidebar */
-.sidebar{
+.sidebar {
   width: 250px;
   height: 100vh;
-  position: fixed; 
+  position: fixed;
   background-color: white;
   transition: all 0.5s ease-out;
   padding: 2rem;
+  overflow-y: hidden;
+}
+
+.sidebar:hover {
+  overflow-y: auto;
 }
 
 .sidebar.inactive {
@@ -49,17 +75,40 @@ body {
   color: #7c8db5;
 }
 
+.sidebar .sidebar-item .sidebar-link {
+  cursor: pointer;
+}
+
 .sidebar .sidebar-item.active .sidebar-link {
   background-color: #435ebe;
   color: #fff;
 }
 
-.sidebar .sidebar-item.active .sidebar-link i{
+.sidebar .sidebar-item.active .sidebar-link i {
   color: #fff;
 }
 
+.sidebar .submenu {
+  list-style: none;
+}
 
+.sidebar .submenu .submenu-item a {
+  padding: 0.7rem 1rem;
+  display: block;
+  color: #25396f;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
 
+.sidebar .submenu .submenu-item a:hover {
+  margin-right: 0.3rem;
+}
+
+.sidebar .sidebar-item .bi-chevron-down {
+  font-size: 0.8rem;
+}
 
 /* Main */
 .main {
