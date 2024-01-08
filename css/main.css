@@ -51,10 +51,31 @@ body {
   font-size: 0.8rem;
 }
 
+.lh-0 {
+  line-height: 0;
+}
+
 .bg-red {
   background-color: #ff7976;
 }
 
+.bg-purple {
+  background-color: #9694ff;
+}
+
+.bg-blue {
+  background-color: #57caeb;
+}
+
+.bg-green {
+  background-color: #5ddab4;
+}
+
+/* Override Bootstrap Class */
+.card {
+  border: none !important;
+  border-radius: 0.7rem;
+}
 
 /* Sidebar */
 .sidebar {
@@ -150,6 +171,20 @@ body {
 
 .main .header .profile::after {
   display: none !important;
+}
+
+.main .content .stats-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .content .stats-icon i {
+  color: #fff;
+  font-size: 1.7rem;
 }
 
 @media (min-width: 992px) {
