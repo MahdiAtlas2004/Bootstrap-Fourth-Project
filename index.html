@@ -8,18 +8,45 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
         integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/main.css">
     <title>webprog.io</title>
 </head>
 
 <body>
 
+    <section x-data="toggleSidebar">
+        <section class="sidebar" x-cloak :class="open || 'inactive'">
+            <i class="bi bi-x fs-1" @click="toggle"></i>
+            Sidebar
+        </section>
+        <section class="main" :class="open || 'active'">
+            <header>
+                <i @click="toggle" class="bi bi-justify fs-3"></i>
+            </header>
+            <div class="content">
+                Content
+            </div>
+        </section>
+    </section>
 
 
 
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('toggleSidebar', () => ({
+                open: window.innerWidth <= 992 ? false : true,
+
+                toggle() {
+                    this.open = !this.open
+                }
+            }))
+        })
+    </script>
 </body>
 
 </html>

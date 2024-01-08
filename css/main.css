@@ -1,15 +1,48 @@
 @font-face {
-    font-family: "Vazir";
-    src: url("../fonts/Vazir.eot");
-    /* IE9 Compat Modes */
-    src: url("../fonts/Vazir.eot?#iefix") format("embedded-opentype"),
-      url("../fonts/Vazir.woff2") format("woff2"),
-      url("../fonts/Vazir.woff") format("woff"),
-      url("../fonts/Vazir.ttf") format("truetype");
-    /* Safari, Android, iOS */
+  font-family: "Vazir";
+  src: url("../fonts/Vazir.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Vazir.woff2") format("woff2"),
+    url("../fonts/Vazir.woff") format("woff"),
+    url("../fonts/Vazir.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+body {
+  font-family: "Vazir" !important;
+}
+
+/* Sidebar */
+.sidebar{
+  width: 250px;
+  height: 100vh;
+  position: fixed; 
+  background-color: white;
+  transition: all 0.5s ease-out;
+}
+
+.sidebar.inactive {
+  margin-right: -250px;
+}
+
+/* Main */
+.main {
+  background-color: #f2f7ff;
+  height: 100vh;
+  transition: all 0.5s ease-out;
+}
+
+.main.active {
+  margin-right: 0px;
+}
+
+@media (min-width: 992px) {
+  .main {
+    margin-right: 250px;
   }
-  
-  body {
-    font-family: "Vazir" !important;
-  }
-  
+}
+
+[x-cloak] {
+  display: none !important;
+}
