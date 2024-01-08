@@ -34,6 +34,28 @@ body {
   font-family: "Vazir" !important;
 }
 
+/* Utilities */
+.text-gray {
+  color: #44494e !important;
+}
+
+.text-gray-600 {
+  color: #6c757d !important;
+}
+
+.fs-7 {
+  font-size: 0.9rem;
+}
+
+.fs-8 {
+  font-size: 0.8rem;
+}
+
+.bg-red {
+  background-color: #ff7976;
+}
+
+
 /* Sidebar */
 .sidebar {
   width: 250px;
@@ -43,6 +65,7 @@ body {
   transition: all 0.5s ease-out;
   padding: 2rem;
   overflow-y: hidden;
+  z-index: 9999;
 }
 
 .sidebar:hover {
@@ -119,6 +142,14 @@ body {
 
 .main.active {
   margin-right: 0px;
+}
+
+.main .toggle-sidebar-icon {
+  color: #364b98;
+}
+
+.main .header .profile::after {
+  display: none !important;
 }
 
 @media (min-width: 992px) {
