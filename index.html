@@ -16,8 +16,129 @@
 
     <section x-data="toggleSidebar">
         <section class="sidebar" x-cloak :class="open || 'inactive'">
-            <i class="bi bi-x fs-1" @click="toggle"></i>
-            Sidebar
+            <div class="d-flex align-items-center justify-content-between justify-content-lg-center">
+                <h4 class="fw-bold">WebProg.io</h4>
+                <i class="d-lg-none bi bi-x fs-1" @click="toggle"></i>
+            </div>
+            <div class="mt-4">
+                <ul class="list-unstyled">
+                    <li class="sidebar-item active">
+                        <a class="sidebar-link" href="./index.html">
+                            <i class="me-2 bi bi-grid-fill"></i>
+                            <span>داشبورد</span>
+                        </a>
+                    </li>
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle" class="sidebar-link">
+                            <i class="me-2 bi bi-shop"></i>
+                            <span>فروشگاه</span>
+                            <i class="bi bi-chevron-down ms-auto"></i>
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="#">لیست فروشگاه ها</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">ایجاد فروشگاه </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">ویرایش فروشگاه</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle" class="sidebar-link">
+                            <i class="me-2 bi bi-box-seam"></i>
+                            <span>محصولات</span>
+                            <i class="bi bi-chevron-down ms-auto"></i>
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="#">لیست محصولات ها</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">ایجاد محصول </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">ویرایش محصول</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle" class="sidebar-link">
+                            <i class="me-2 bi bi-basket-fill"></i>
+                            <span>سفارشات</span>
+                            <i class="bi bi-chevron-down ms-auto"></i>
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="#">لیست سفارشات </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">سفارشات تایید شده </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">سفارشات تایید نشده</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="#">
+                            <i class="me-2 bi bi-percent"></i>
+                            <span>تخفیف ها</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="#">
+                            <i class="me-2 bi bi-chat-right-dots-fill"></i>
+                            <span>تکیت</span>
+                        </a>
+                    </li>
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle" class="sidebar-link">
+                            <i class="me-2 bi bi-people-fill"></i>
+                            <span>کاربران</span>
+                            <i class="bi bi-chevron-down ms-auto"></i>
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="#">لیست کاربران </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">ایجاد کاربران</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">ویرایش کاربران</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li x-data="dropdown" class="sidebar-item">
+                        <div @click="toggle" class="sidebar-link">
+                            <i class="me-2 bi bi-chat-dots-fill"></i>
+                            <span>کامنت ها</span>
+                            <i class="bi bi-chevron-down ms-auto"></i>
+                        </div>
+                        <ul x-show="open" x-transition class="submenu">
+                            <li class="submenu-item">
+                                <a href="#">لیست کامنت ها </a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">کامنت های تایید شده</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#">کامنت های تایید نشده</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section class="main" :class="open || 'active'">
             <header>
@@ -44,7 +165,14 @@
                 toggle() {
                     this.open = !this.open
                 }
-            }))
+            })),
+                Alpine.data('dropdown', () => ({
+                    open: false,
+
+                    toggle() {
+                        this.open = !this.open
+                    }
+                }))
         })
     </script>
 </body>

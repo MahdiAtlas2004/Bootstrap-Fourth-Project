@@ -20,11 +20,46 @@ body {
   position: fixed; 
   background-color: white;
   transition: all 0.5s ease-out;
+  padding: 2rem;
 }
 
 .sidebar.inactive {
   margin-right: -250px;
 }
+
+.sidebar .sidebar-item {
+  margin-top: 0.5rem;
+}
+
+.sidebar .sidebar-item .sidebar-link {
+  text-decoration: none;
+  color: #25396f;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  transition: all 0.5s;
+}
+
+.sidebar .sidebar-item .sidebar-link:hover {
+  background-color: #f0f1f5;
+}
+
+.sidebar .sidebar-item .sidebar-link i {
+  color: #7c8db5;
+}
+
+.sidebar .sidebar-item.active .sidebar-link {
+  background-color: #435ebe;
+  color: #fff;
+}
+
+.sidebar .sidebar-item.active .sidebar-link i{
+  color: #fff;
+}
+
+
+
 
 /* Main */
 .main {
