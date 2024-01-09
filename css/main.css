@@ -77,6 +77,16 @@ body {
   border-radius: 0.7rem;
 }
 
+.card-header {
+  padding: 1rem;
+  background-color: #fff;
+  border-bottom: none;
+}
+
+.card-header:first-child {
+  border-radius: 0.7rem;
+}
+
 /* Sidebar */
 .sidebar {
   width: 250px;
@@ -157,7 +167,6 @@ body {
 /* Main */
 .main {
   background-color: #f2f7ff;
-  height: 100vh;
   transition: all 0.5s ease-out;
 }
 

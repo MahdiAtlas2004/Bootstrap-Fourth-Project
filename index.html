@@ -234,7 +234,7 @@
                                                 <div class="col-md-8">
                                                     <h6 class="fs-7 text-muted">نمایش پروفایل</h6>
                                                     <h6 class="fw-bold mb-0 purecounter" data-purecounter-start="0"
-                                                    data-purecounter-end="18600">0</h6>
+                                                        data-purecounter-end="18600">0</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -252,7 +252,7 @@
                                                 <div class="col-md-8">
                                                     <h6 class="fs-7 text-muted">لورم ایپسوم </h6>
                                                     <h6 class="fw-bold mb-0 purecounter" data-purecounter-start="0"
-                                                    data-purecounter-end="125600">0</h6>
+                                                        data-purecounter-end="125600">0</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -270,7 +270,7 @@
                                                 <div class="col-md-8">
                                                     <h6 class="fs-7 text-muted">لورم ایپسوم </h6>
                                                     <h6 class="fw-bold mb-0 purecounter" data-purecounter-start="0"
-                                                    data-purecounter-end="95600">0</h6>
+                                                        data-purecounter-end="95600">0</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -288,15 +288,29 @@
                                                 <div class="col-md-8">
                                                     <h6 class="fs-7 text-muted">لورم ایپسوم </h6>
                                                     <h6 class="fw-bold mb-0 purecounter" data-purecounter-start="0"
-                                                    data-purecounter-end="452">0</h6>
+                                                        data-purecounter-end="452">0</h6>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Chart -->
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="fw-bold mb-0">لورم ایپسوم </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div id="chartdiv" style="height: 500px;" dir="ltr"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-3">
+                            <!-- Profile -->
                             <div class="card">
                                 <div class="card-body d-flex align-items-center p-4">
                                     <img src="./images/7.jpg" alt="p" class="img-fluid rounded-circle" width="70">
@@ -320,29 +334,19 @@
         crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
 
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script src="./js/charts/chart1.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
     <script>
         new PureCounter();
     </script>
 
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('toggleSidebar', () => ({
-                open: window.innerWidth <= 992 ? false : true,
-
-                toggle() {
-                    this.open = !this.open
-                }
-            })),
-                Alpine.data('dropdown', () => ({
-                    open: false,
-
-                    toggle() {
-                        this.open = !this.open
-                    }
-                }))
-        })
-    </script>
+    <script src="./js/alpineComponents.js"></script>
 </body>
 
 </html>
