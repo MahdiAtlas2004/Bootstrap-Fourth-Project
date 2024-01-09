@@ -71,6 +71,15 @@ body {
   background-color: #5ddab4;
 }
 
+.dir-ltr {
+  direction: ltr;
+}
+
+.btn-light-primary {
+  background-color: #ebf3ff;
+  color: #002152;
+}
+
 /* Override Bootstrap Class */
 .card {
   border: none !important;
